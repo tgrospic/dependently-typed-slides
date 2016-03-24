@@ -467,7 +467,8 @@ replicate' (SS n) a = a :- replicate' n a
 
 # Haskell - Singletons library
 
-.small-code[```hs
+.small-code[
+```hs
 {-# LANGUAGE TemplateHaskell, TypeFamilies, GADTs, KindSignatures, DataKinds, PolyKinds, ScopedTypeVariables, TypeOperators #-}
 {-# LANGUAGE FlexibleContexts, RankNTypes, UndecidableInstances, FlexibleInstances, InstanceSigs, DefaultSignatures #-}
 module SingletonsSample
@@ -495,13 +496,15 @@ singletons [d|
   min (S _) Z     = Z
   min (S m) (S n) = S (min m n)
   |]
-```]
+```
+]
 
 ---
 
 # Typed lambda evaluator
 
-.small-code[```hs
+.small-code[
+```hs
 data Ty = TyBool | TyFun Ty Ty
 
 typeOf : Ty -> Type
@@ -532,7 +535,8 @@ eval env (App' f x) = eval env f $ eval env x
 eval env T = True
 eval env F = False
 eval env (IF expr expr' expr'') = if eval env expr then eval env expr' else eval env expr''
-```]
+```
+]
 
 ---
 
